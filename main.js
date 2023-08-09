@@ -63,6 +63,7 @@ btnStart.addEventListener("click", () => {
     btnStart.innerText = "멈춤";
   } else {
     isOn = false;
+    
     btnStart.innerText = "시작";
     btnStart.style.opacity = 0;
     btnStart.style.cursor = 'inherit';
