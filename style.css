@@ -15,7 +15,7 @@ body {
   text-align: center;
 }
 h1 {
-  padding-bottom: 20px;
+  padding: 20px;
 }
 .spin_wheel {
   width: 500px;
@@ -228,7 +228,8 @@ span {
   }
 
   .item_3 {
-    top: -103px;
+    top: -102px;
+    left: 65px;
   }
 
   .item_4 {
