@@ -17,7 +17,7 @@ function rotateWheel() {
   
   // 휠이 한바퀴 돌면 다시 처음으로 각도 리셋 (계산하기 편하게)
   if (rPos > 360) {
-    rPos -= 360;
+    rPos = 0;
   }
   
   if (!isOn && rotationSpeed > 0.1) {
