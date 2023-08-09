@@ -46,6 +46,7 @@ function rotateWheel() {
       text.innerText = "100점입니다😍";
     }
   }
+  console.log(rPos)
 }
 
 // 애니메이션 멈춤
