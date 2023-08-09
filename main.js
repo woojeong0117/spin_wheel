@@ -21,12 +21,13 @@ function rotateWheel() {
   }
   
   if (!isOn && rotationSpeed > 0.1) {
-    rotationSpeed -= 0.1; // 천천히 속도 감속시켜서 멈추게
+    rotationSpeed *= 0.98; // 0.98 등의 값으로 곱하여 천천히 속도를 줄임
   } else if (!isOn && rotationSpeed <= 0.1) {
+    rotationSpeed = 0; // 최종적으로 속도를 0으로 설정하여 애니메이션을 정확하게 멈춤
     stop();
     setTimeout(() => {
       modal.classList.add("on");
-    }, 1000); // 모달창이 바로 뜨면 결과가 안보이므로 지연시킴
+    }, 1000);// 모달창이 바로 뜨면 결과가 안보이므로 지연시킴
     
     // 선 사이에 결과가 위치하게되면 애매해지므로 10단위로 끊어서 배치함
     rPos = Math.floor(rPos / 10) * 10;
