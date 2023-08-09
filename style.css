@@ -33,6 +33,7 @@ h1 {
   bottom: 5%;
   border: 5px solid #000;
   border-radius: 50%;
+  transform: rotateZ(0deg);
 }
 
 .pin {
