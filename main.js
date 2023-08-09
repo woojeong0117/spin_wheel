@@ -46,7 +46,6 @@ function rotateWheel() {
       text.innerText = "100점입니다😍";
     }
   }
-  console.log(rPos)
 }
 
 // 애니메이션 멈춤
@@ -58,7 +57,7 @@ function stop() {
 btnStart.addEventListener("click", () => {
   if (!isOn) {
     isOn = true;
-    rotationSpeed = 10; // Reset rotation speed
+    rotationSpeed = 5; // Reset rotation speed
     rotateWheel();
     wheel.classList.add("on");
     btnStart.blur();
