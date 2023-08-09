@@ -4,36 +4,35 @@ const modal = document.querySelector(".modal_wrap");
 const btnClose = document.querySelector(".close");
 const text = document.querySelector(".modal > p");
 const title = document.querySelector('.modal > h1')
-let isOn = false;
+let isOn = false; 
 let rPos = 0;
-let rotationSpeed = 0; // Initial rotation speed
+let rotationSpeed = 0; 
 let animationFrameId;
 
+// 돌아가는 애니메이션
 function rotateWheel() {
   rPos += rotationSpeed;
   wheel.style.transform = `rotate(${rPos}deg)`;
-  animationFrameId = requestAnimationFrame(rotateWheel);
+  animationFrameId = requestAnimationFrame(rotateWheel); 
   
+  // 휠이 한바퀴 돌면 다시 처음으로 각도 리셋 (계산하기 편하게)
   if (rPos > 360) {
     rPos -= 360;
   }
   
-  // Decrease rotation speed gradually when stopping
   if (!isOn && rotationSpeed > 0.1) {
-    rotationSpeed -= 0.1; // Adjust the decrement value for desired slowdown rate
+    rotationSpeed -= 0.1; // 천천히 속도 감속시켜서 멈추게
   } else if (!isOn && rotationSpeed <= 0.1) {
     stop();
     setTimeout(() => {
       modal.classList.add("on");
-    }, 1000);
+    }, 1000); // 모달창이 바로 뜨면 결과가 안보이므로 지연시킴
     
-    // Adjust rPos to the nearest 10's multiple
+    // 선 사이에 결과가 위치하게되면 애매해지므로 10단위로 끊어서 배치함
     rPos = Math.floor(rPos / 10) * 10;
     wheel.style.transform = `rotate(${rPos}deg)`;
-    console.log(rPos)
 
-
-    // Assign values based on rPos ranges
+    // 
     if (rPos >= 0 && rPos <= 40) {
       text.innerText = "100점입니다😍";
     } else if (rPos > 40 && rPos <= 130) {
@@ -48,10 +47,12 @@ function rotateWheel() {
   }
 }
 
+// 애니메이션 멈춤
 function stop() {
   cancelAnimationFrame(animationFrameId);
 }
 
+// 버튼 클릭하면
 btnStart.addEventListener("click", () => {
   if (!isOn) {
     isOn = true;
@@ -63,12 +64,15 @@ btnStart.addEventListener("click", () => {
   } else {
     isOn = false;
     btnStart.innerText = "시작";
-    btnStart.style.display = "none";
+    btnStart.style.opacity = 0;
+    btnStart.style.cursor = 'inherit';
+
     btnStart.blur();
   }
 });
 
+// 확인버튼 누르면 새로고침
 btnClose.addEventListener("click", () => {
   modal.classList.remove("on");
-  location.reload();
+  location.reload(); // 새로고침
 });
