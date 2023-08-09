@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="app">
+            <h1>돌려돌려돌림판</h1>
+            <div class="spin_wheel">
+                <div class="pin"></div>
+                <div class="wheel">
+                    <div class="item_wrap">
+                        <div class="item item_1">
+                            <span>100점</span>
+                        </div>
+                        <div class="item item_2">
+                            <span>200점</span>
+                        </div>
+                        <div class="item item_3">
+                            <span>300점</span>
+                        </div>
+                        <div class="item item_4">
+                            <span>400점</span>
+                        </div>
+                    </div>
+
+                    <div class="line_wrap">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            <button class="start">시작</button>
+        </div>
+        <div class="modal_wrap">
+            <div class="modal">
+                <h1>축 당첨!</h1>
+                <p></p>
+                <button type="button" class="close">확인</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
